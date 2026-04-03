@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <rect x="2" y="2" width="636" height="416" fill="#ffffff" stroke="#cfcfcf" stroke-width="4"/>
+  <rect x="40" y="120" width="560" height="180" fill="#f0f0f0" stroke="#cfcfcf" stroke-width="2"/>
+  <path d="M120 250h400l-40-50H160l-40 50z" fill="#dcdcdc"/>
+  <circle cx="200" cy="270" r="28" fill="#bcbcbc"/>
+  <circle cx="440" cy="270" r="28" fill="#bcbcbc"/>
+  <text x="320" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#9a9a9a">
+    HERO IMAGE
+  </text>
+</svg>

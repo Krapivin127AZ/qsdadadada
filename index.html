@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VelvetAuto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Oswald:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#">VelvetAuto</a>
+        <nav class="main-nav" aria-label="Головна навігація">
+          <ul>
+            <li><a href="#catalog">Каталог</a></li>
+            <li><a href="#new-cars">Нові</a></li>
+            <li><a href="#used-cars">З пробігом</a></li>
+            <li><a href="#finance">Кредит</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-button" type="button" aria-label="Пошук">
+            <img src="assets/icons/search.svg" alt="" aria-hidden="true">
+          </button>
+          <button class="icon-button" type="button" aria-label="Профіль">
+            <img src="assets/icons/user.svg" alt="" aria-hidden="true">
+          </button>
+          <a class="login-link" href="#">Увійти</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <h1>THE NEW <span>STANDARD</span></h1>
+            <p class="hero-subtitle">ENGINEERED FOR EXCELLENCE. BUILT FOR PERFORMANCE.</p>
+            <div class="hero-actions">
+              <button class="btn btn-dark" type="button">Explore models</button>
+              <button class="btn btn-light" type="button">Build yours</button>
+            </div>
+          </div>
+          <div class="hero-media">
+            <img src="assets/images/hero-car.png" alt="Спортивний автомобіль VelvetAuto">
+          </div>
+        </div>
+      </section>
+
+      <section id="catalog" class="catalog">
+        <div class="container">
+          <div class="section-head">
+            <h2>Каталог</h2>
+            <p>Знайдіть автомобіль вашої мрії</p>
+          </div>
+          <form class="catalog-form" id="catalogForm">
+            <label>
+              <span>Марка</span>
+              <input id="brandInput" type="text" placeholder="Марка">
+            </label>
+            <label>
+              <span>Модель</span>
+              <input id="modelInput" type="text" placeholder="Модель">
+            </label>
+            <label>
+              <span>Тип</span>
+              <select id="typeSelect">
+                <option>Всі автомобілі</option>
+                <option>Седан</option>
+                <option>Кросовер</option>
+                <option>Купе</option>
+                <option>Хетчбек</option>
+                <option>Універсал</option>
+              </select>
+            </label>
+            <button class="btn btn-dark" type="submit">Пошук</button>
+            <button class="btn btn-outline" type="button" id="resetFilters">Скинути</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="sell-car" class="sell-cta">
+        <div class="container sell-inner">
+          <div>
+            <h2>Продати авто</h2>
+            <p>Додайте своє оголошення безкоштовно</p>
+          </div>
+          <button class="btn btn-outline" type="button">+ Додати оголошення</button>
+        </div>
+      </section>
+
+      <section id="new-cars" class="new-cars">
+        <div class="container">
+          <div class="section-head">
+            <h2>Нові автомобілі</h2>
+            <p>Актуальні моделі</p>
+          </div>
+          <div class="car-grid" id="newCarsGrid"></div>
+        </div>
+      </section>
+
+      <section id="used-cars" class="used-cars">
+        <div class="container">
+          <div class="section-head">
+            <h2>Авто з пробігом</h2>
+            <p>Перевірені пропозиції від дилерів</p>
+          </div>
+          <div class="used-controls">
+            <p class="used-count">Знайдено: <span id="usedCount">0</span></p>
+            <button class="btn btn-outline" type="button" id="shuffleUsedCars">Оновити добірку</button>
+          </div>
+          <form class="used-form" id="usedCarForm">
+            <label>
+              <span>Марка</span>
+              <input id="usedBrand" type="text" placeholder="Напр. BMW" required>
+            </label>
+            <label>
+              <span>Модель</span>
+              <input id="usedModel" type="text" placeholder="Напр. X5" required>
+            </label>
+            <label>
+              <span>Рік</span>
+              <input id="usedYear" type="number" min="1990" max="2026" placeholder="2019" required>
+            </label>
+            <label>
+              <span>Ціна, $</span>
+              <input id="usedPrice" type="number" min="1000" step="100" placeholder="25000" required>
+            </label>
+            <label>
+              <span>Пробіг, км</span>
+              <input id="usedMileage" type="number" min="0" step="1000" placeholder="65000" required>
+            </label>
+            <label>
+              <span>Місто</span>
+              <input id="usedCity" type="text" placeholder="Київ" required>
+            </label>
+            <label>
+              <span>Тип</span>
+              <select id="usedType">
+                <option>Седан</option>
+                <option>Кросовер</option>
+                <option>Купе</option>
+                <option>Хетчбек</option>
+                <option>Універсал</option>
+              </select>
+            </label>
+            <label>
+              <span>Посилання на фото (необов’язково)</span>
+              <input id="usedImage" type="url" placeholder="https://...">
+            </label>
+            <button class="btn btn-dark" type="submit">Додати авто</button>
+          </form>
+          <div class="used-grid" id="usedCarsGrid"></div>
+        </div>
+      </section>
+
+      <section class="highlights">
+        <div class="container highlights-grid">
+          <article class="highlight-card">
+            <img src="assets/icons/shield.svg" alt="" aria-hidden="true">
+            <p>Every vehicle undergoes inspection</p>
+          </article>
+          <article class="highlight-card">
+            <img src="assets/icons/globe.svg" alt="" aria-hidden="true">
+            <p>Access to authorized dealers worldwide</p>
+          </article>
+          <article class="highlight-card">
+            <img src="assets/icons/headset.svg" alt="" aria-hidden="true">
+            <p>Professional support from specialists</p>
+          </article>
+          <article class="highlight-card">
+            <img src="assets/icons/trophy.svg" alt="" aria-hidden="true">
+            <p>Decades of engineering excellence</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="finance" class="finance">
+        <div class="container">
+          <div class="section-head center">
+            <h2>Фінансування</h2>
+            <p>Гнучкі умови кредитування для вашого автомобіля</p>
+          </div>
+          <div class="finance-grid">
+            <div class="calculator card">
+              <div class="calculator-header">
+                <img src="assets/icons/calculator.svg" alt="" aria-hidden="true">
+                <h3>Калькулятор кредиту</h3>
+              </div>
+              <label>
+                <span>Вартість автомобіля</span>
+                <div class="range-row">
+                  <span>$50 000</span>
+                  <strong id="priceValue">$100 000</strong>
+                  <span>$500 000</span>
+                </div>
+                <input id="priceRange" type="range" min="50000" max="500000" value="100000">
+              </label>
+              <label>
+                <span>Перший внесок</span>
+                <div class="range-row">
+                  <span>$0</span>
+                  <strong id="downValue">$20 000</strong>
+                  <span>$100 000</span>
+                </div>
+                <input id="downRange" type="range" min="0" max="100000" value="20000">
+              </label>
+              <label>
+                <span>Термін кредиту (місяців)</span>
+                <div class="range-row">
+                  <span>12</span>
+                  <strong id="termValue">60 міс</strong>
+                  <span>84</span>
+                </div>
+                <input id="termRange" type="range" min="12" max="84" value="60">
+              </label>
+              <div class="rate">
+                <span>Процентна ставка</span>
+                <strong>4.9%</strong>
+              </div>
+              <div class="rate">
+                <span>Орієнтовний платіж</span>
+                <strong id="monthlyPayment">$0</strong>
+              </div>
+            </div>
+            <div class="benefits card">
+              <h3>Переваги</h3>
+              <ul>
+                <li><img src="assets/icons/check.svg" alt="" aria-hidden="true">Низькі процентні ставки</li>
+                <li><img src="assets/icons/check.svg" alt="" aria-hidden="true">Швидке схвалення</li>
+                <li><img src="assets/icons/check.svg" alt="" aria-hidden="true">Без прихованих комісій</li>
+                <li><img src="assets/icons/check.svg" alt="" aria-hidden="true">Дострокове погашення</li>
+              </ul>
+              <button class="btn btn-dark" type="button">Подати заявку на кредит</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience">
+        <div class="container experience-inner">
+          <h2>Experience Excellence</h2>
+          <p>Запишіться на тест-драйв</p>
+          <div class="experience-actions">
+            <button class="btn btn-light" type="button">Зв’язатися з дилером</button>
+            <button class="btn btn-outline-light" type="button">Знайти дилера</button>
+          </div>
+        </div>
+        <img class="experience-mark" src="assets/icons/spark.svg" alt="" aria-hidden="true">
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <p>VelvetAuto © 2026</p>
+          <p>Усі права захищено</p>
+        </div>
+        <details class="image-credits">
+          <summary>Джерела фото</summary>
+          <ul>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Porsche_911_991.jpg">Porsche 911 (991)</a></li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Porsche_Taycan_(51889486291).jpg">Porsche Taycan</a></li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Porsche_Cayenne.jpg">Porsche Cayenne</a></li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:BMW_3_Series_(G20).jpg">BMW 3 Series (G20)</a></li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Audi_A4_(B9).jpg">Audi A4 (B9)</a></li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:2018_Toyota_Camry_LE_front_6.13.18.jpg">Toyota Camry (XV70)</a></li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Volkswagen_Golf_1.4_TSI_Mk7_Pure_White_(4).jpg">Volkswagen Golf Mk7</a></li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Mazda_CX-5.jpg">Mazda CX-5</a></li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Hyundai_Tucson_TL.jpg">Hyundai Tucson</a></li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Skoda_Octavia_IV_Combi_IMG_3910.jpg">Škoda Octavia Combi</a></li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Honda_Civic_sedan_01.jpg">Honda Civic sedan</a></li>
+          </ul>
+        </details>
+      </div>
+    </footer>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

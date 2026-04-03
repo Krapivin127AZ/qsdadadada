@@ -1,0 +1,637 @@
+:root {
+  --black: #111111;
+  --dark: #1b1b1b;
+  --white: #ffffff;
+  --gray-50: #fafafa;
+  --gray-100: #f3f3f3;
+  --gray-200: #e4e4e4;
+  --gray-300: #d2d2d2;
+  --gray-500: #6f6f6f;
+  --accent: #c4463f;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.4;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--gray-200);
+  background: var(--white);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  gap: 20px;
+}
+
+.logo {
+  background: var(--accent);
+  color: var(--white);
+  font-family: "Oswald", "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.icon-button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--gray-300);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.login-link {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.hero {
+  padding: 56px 0 40px;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-family: "Oswald", "Montserrat", sans-serif;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.05;
+  margin: 0 0 16px;
+  letter-spacing: 0.02em;
+}
+
+.hero-content h1 span {
+  display: block;
+}
+
+.hero-subtitle {
+  max-width: 340px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--gray-500);
+  margin: 0 0 24px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-media {
+  border: 1px solid var(--gray-200);
+  background: var(--gray-50);
+  padding: 18px;
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+}
+
+.hero-media img {
+  max-height: 300px;
+  width: auto;
+}
+
+.btn {
+  padding: 10px 18px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--black);
+  background: var(--white);
+}
+
+.btn-dark {
+  background: var(--black);
+  color: var(--white);
+}
+
+.btn-light {
+  background: var(--white);
+  color: var(--black);
+}
+
+.btn-outline {
+  border: 1px solid var(--gray-300);
+  color: var(--black);
+}
+
+.btn-outline-light {
+  border: 1px solid var(--white);
+  color: var(--white);
+  background: transparent;
+}
+
+.catalog,
+.sell-cta,
+.new-cars,
+.used-cars,
+.highlights,
+.finance {
+  padding: 36px 0;
+}
+
+.section-head {
+  margin-bottom: 20px;
+}
+
+.section-head h2 {
+  margin: 0 0 4px;
+  font-family: "Oswald", "Montserrat", sans-serif;
+  font-size: 26px;
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+.section-head.center {
+  text-align: center;
+}
+
+.catalog-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto auto;
+  gap: 12px;
+  background: var(--gray-100);
+  padding: 12px;
+  align-items: end;
+}
+
+.catalog-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+.catalog-form input,
+.catalog-form select {
+  padding: 10px 12px;
+  border: 1px solid var(--gray-300);
+  background: var(--white);
+  font-size: 13px;
+}
+
+.sell-cta {
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.sell-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sell-inner h2 {
+  margin: 0 0 6px;
+  font-family: "Oswald", "Montserrat", sans-serif;
+}
+
+.sell-inner p {
+  margin: 0;
+  color: var(--gray-500);
+}
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.car-card {
+  position: relative;
+  padding: 12px;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+}
+
+.car-card .tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 10px;
+  padding: 2px 6px;
+  letter-spacing: 0.08em;
+}
+
+.car-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  background: var(--gray-100);
+}
+
+.car-info {
+  margin-top: 10px;
+  display: grid;
+  gap: 4px;
+}
+
+.car-card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-family: "Oswald", "Montserrat", sans-serif;
+}
+
+.car-card p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.used-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.used-count {
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-500);
+}
+
+.used-form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+}
+
+.used-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+.used-form input,
+.used-form select {
+  padding: 10px 12px;
+  border: 1px solid var(--gray-300);
+  background: var(--white);
+  font-size: 13px;
+}
+
+.used-form button {
+  align-self: end;
+}
+
+.used-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.used-card {
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+}
+
+.used-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  background: var(--gray-100);
+}
+
+.used-card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-family: "Oswald", "Montserrat", sans-serif;
+}
+
+.used-price {
+  margin: 0;
+  font-weight: 600;
+}
+
+.used-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.used-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 16px;
+  border: 1px dashed var(--gray-300);
+  color: var(--gray-500);
+  text-align: center;
+}
+
+.highlights {
+  background: var(--gray-50);
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.highlight-card {
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.finance-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  padding: 20px;
+}
+
+.calculator-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.calculator label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+.calculator input[type="range"] {
+  width: 100%;
+}
+
+.range-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--black);
+}
+
+.rate {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.benefits h3 {
+  margin-top: 0;
+  font-family: "Oswald", "Montserrat", sans-serif;
+}
+
+.benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: grid;
+  gap: 10px;
+}
+
+.benefits li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.experience {
+  position: relative;
+  padding: 50px 0;
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  overflow: hidden;
+}
+
+.experience-inner h2 {
+  margin: 0 0 6px;
+  font-family: "Oswald", "Montserrat", sans-serif;
+  font-size: 32px;
+}
+
+.experience-inner p {
+  margin: 0 0 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--gray-300);
+}
+
+.experience-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.experience-mark {
+  position: absolute;
+  right: 60px;
+  top: 20px;
+  width: 60px;
+  opacity: 0.6;
+}
+
+.site-footer {
+  border-top: 1px solid var(--gray-200);
+  padding: 18px 0;
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.image-credits {
+  font-size: 11px;
+  color: var(--gray-500);
+}
+
+.image-credits summary {
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.image-credits ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: grid;
+  gap: 4px;
+}
+
+.image-credits a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .car-grid,
+  .highlights-grid,
+  .used-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .finance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .used-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+  }
+
+  .catalog-form {
+    grid-template-columns: 1fr;
+  }
+
+  .used-form {
+    grid-template-columns: 1fr;
+  }
+
+  .sell-inner,
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .car-grid,
+  .highlights-grid,
+  .used-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-mark {
+    right: 20px;
+    width: 40px;
+  }
+}
